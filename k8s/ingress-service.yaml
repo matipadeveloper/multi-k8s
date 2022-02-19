@@ -10,7 +10,6 @@ metadata:
     cert-manager.io/cluster-issuer: "letsencrypt-prod1"
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
 spec:
-  externalTrafficPolicy: Cluster
   tls:
     - hosts:
       - multik8s.khozar.com
