@@ -2,12 +2,18 @@ apiVersion: cert-manager.io/v1
 
 kind: Certificate
 metadata:
-  name: khozar-com-tls1
+  name: khozar-com-tls
 spec:
   secretName: khozar-com
   issuerRef:
-    name: letsencrypt-prod
+    name: letsencrypt-prod1
     kind: ClusterIssuer
   commonName: khozar.com
   dnsNames:
     - multik8s.khozar.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - multik8s.khozar.com
